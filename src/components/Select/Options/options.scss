@@ -1,0 +1,26 @@
+.options {
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  left: -1px;
+  outline: none;
+  position: absolute;
+  top: 28px; // options .select:height - 2px
+  width: calc(100% + 2px);
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 8px;
+    height: 28px; // options .select:height - 2px
+    color: rgb(84, 84, 84);
+    // &:focus {
+    //   outline: none;
+    // }
+    &:hover {
+      background: #ccc;
+    }
+  }
+}

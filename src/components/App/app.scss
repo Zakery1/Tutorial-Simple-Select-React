@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  // border: 1px dashed red;
+}
+
+.development {
+  display: flex;
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 50vw;
+    height: 100vh;
+    border: 1px dashed red;
+    &:last-child {
+      border-width: 1px 1px 1px 0;
+    }
+  }
+}
+
+.select-container {
+  border: 1px dashed green;
+  position: absolute;
+  width: 300px;
+}

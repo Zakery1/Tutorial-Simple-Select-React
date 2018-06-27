@@ -1,0 +1,54 @@
+{
+  "name": "simple-react-select",
+  "version": "1.0.0",
+  "description": "A simple custom select element built with React",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:js": "NODE_ENV=production babel --plugins transform-es2015-modules-umd src/components/Select --out-dir ./dist",
+    "build:css": "node-sass src/components/Select -o dist/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild:dev": "rm -rf ./dev",
+    "build:dev": "NODE_ENV=development webpack -d",
+    "start": "NODE_ENV=development; webpack-dev-server -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-rename-import": "^2.2.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.10.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "peerDependencies": {
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

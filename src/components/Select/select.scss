@@ -1,0 +1,36 @@
+// create scss variables
+
+.select {
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  font-size: 14px;
+  position: relative;
+  input {
+    border: none;
+    flex: 1;
+    padding: 0 0 0 5px;
+    // &:focus {
+    //   outline: none;
+    // }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    // &:focus {
+    //   outline: none;
+    // }
+    &--triangle {
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 7px solid #ccc;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "presets": ["env", "react", "stage-0"],
+  "env": {
+    "development": {},
+    "production": {
+      "plugins": [
+        ["transform-rename-import",
+        {
+          "original": "^(.+?)\\.scss$",
+          "replacement": "$1.css"
+        }
+      ]]
+    }
+  }
+}
