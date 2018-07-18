@@ -1,79 +1,38 @@
 import React from 'react';
-import { arrayOf, shape, string, number } from 'prop-types';
 
+import SelectButton from './SelectButton';
 import Options from './Options';
 
 import './select.scss';
 
 class SelectInput extends React.Component {
-  static propTypes = {
-    options: arrayOf(shape({
-      name: string,
-      value: string || number,
-    })),
-  }
 
-  static defaultProps = {
-    options: [],
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: this.props.options,
-      mouseDown: false,
-      dropDown: false,
-      value: '',
-    };
-  }
-
-  componentDidMount() {
-    document.addEventListener('mouseup', this.mouseUpHandler, false);
-  }
+  state = {
+    options: this.props.options,
+    value: '',
+    dropDown: false,
+    mouseDown: false,
+  };
 
   onInputMouseDown = () => {
     this.setState(() => ({
       mouseDown: true,
       dropDown: true,
-    }));
+    }), () => window.addEventListener('mouseup', this.mouseUpHandler, false));
   }
 
   onCloseDropDown = () => {
     this.setState(() => ({
       mouseDown: false,
       dropDown: false,
-    }));
+    }), window.removeEventListener('mouseup', this.mouseUpHandler, false));
   }
 
   onOptionMouseDown = (e) => {
-    this.setState({
-      mouseDown: true,
-      dropDown: false,
-      value: e.target.innerText,
-    });
-  }
-
-  onChange = (e) => {
-    // TODO: use e.persist() instead of spread
     const event = { ...e };
-    this.setState(
-      () => ({ value: event.currentTarget.value }),
-      () => {
-        this.filterOptions(event.currentTarget.value);
-      },
-    );
-  }
-
-  filterOptions = (value) => {
-    let { options } = this.props;
-    options = options.filter((option) => {
-      const n = option.name.toLowerCase();
-      const v = value.toLowerCase();
-      return n.includes(v);
-    });
-
-    this.setState({ options });
+    this.setState(() => ({
+      value: event.target.innerText,
+    }));
   }
 
   mouseUpHandler = () => {
@@ -93,16 +52,10 @@ class SelectInput extends React.Component {
           placeholder="Topic"
           value={value}
           onMouseDown={this.onInputMouseDown}
-          onChange={this.onChange}
         />
-        <div
-          className="select__button"
-          onMouseDown={this.onInputMouseDown}
-          role="button"
-          tabIndex="0"
-        >
-          <div className="select__button--triangle" />
-        </div>
+        <SelectButton
+          onInputMouseDown={this.onInputMouseDown}
+        />
         {
           dropDown &&
           <Options

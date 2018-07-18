@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild:dev": "rm -rf ./dev",
     "build:dev": "NODE_ENV=development webpack -d",
-    "start": "NODE_ENV=development; webpack-dev-server -d"
+    "start": "NODE_ENV=development webpack-dev-server -d"
   },
   "keywords": [],
   "author": "",

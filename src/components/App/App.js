@@ -15,13 +15,8 @@ const App = () => (
   <div className="development">
     <div className="development__container">
       <div className="select-container">
-        Hello World NPM package
-      </div>
-    </div>
-    <div className="development__container">
-      <div className="select-container">
-        Hello World Select
-        {/* <Select options={options} /> */}
+        {/* Hello World Select */}
+        <Select options={options} />
       </div>
     </div>
   </div>

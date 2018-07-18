@@ -16,9 +16,9 @@
     padding: 0 0 0 8px;
     height: 28px; // options .select:height - 2px
     color: rgb(84, 84, 84);
-    // &:focus {
-    //   outline: none;
-    // }
+    &:focus {
+      outline: none;
+    }
     &:hover {
       background: #ccc;
     }

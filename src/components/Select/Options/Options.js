@@ -14,7 +14,6 @@ const Options = ({ options, onOptionMouseDown }) => (
         onMouseDown={onOptionMouseDown}
         value={opt.value || opt.name}
         name={opt.name}
-        tabIndex="0"
       >
         {opt.name}
       </option>
