@@ -28,13 +28,6 @@ class SelectInput extends React.Component {
     }), window.removeEventListener('mouseup', this.mouseUpHandler, false));
   }
 
-  onOptionMouseDown = (e) => {
-    const event = { ...e };
-    this.setState(() => ({
-      value: event.target.innerText,
-    }));
-  }
-
   mouseUpHandler = () => {
     if (this.state.mouseDown) {
       this.setState(() => ({ mouseDown: false }));
@@ -60,7 +53,6 @@ class SelectInput extends React.Component {
           dropDown &&
           <Options
             options={options}
-            onOptionMouseDown={this.onOptionMouseDown}
           />
         }
       </div>
