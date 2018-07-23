@@ -37,7 +37,7 @@ class SelectInput extends React.Component {
 
   mouseUpHandler = () => {
     if (this.state.mouseDown) {
-      this.setState({ mouseDown: false });
+      this.setState(() => ({ mouseDown: false }));
       return;
     }
     this.onCloseDropDown();
