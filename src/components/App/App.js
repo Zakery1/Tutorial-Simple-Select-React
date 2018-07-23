@@ -15,8 +15,7 @@ const App = () => (
   <div className="development">
     <div className="development__container">
       <div className="select-container">
-        Hello World Select
-        {/* <Select options={options} /> */}
+        <Select options={options} />
       </div>
     </div>
   </div>
