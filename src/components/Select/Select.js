@@ -11,36 +11,18 @@ class SelectInput extends React.Component {
     options: this.props.options,
     value: '',
     dropDown: false,
-    mouseDown: false,
   };
 
   onInputMouseDown = () => {
     this.setState(() => ({
-      mouseDown: true,
       dropDown: true,
-    }), () => window.addEventListener('mouseup', this.mouseUpHandler, false));
+    }));
   }
 
   onCloseDropDown = () => {
     this.setState(() => ({
-      mouseDown: false,
       dropDown: false,
-    }), window.removeEventListener('mouseup', this.mouseUpHandler, false));
-  }
-
-  onOptionMouseDown = (e) => {
-    const event = { ...e };
-    this.setState(() => ({
-      value: event.target.innerText,
     }));
-  }
-
-  mouseUpHandler = () => {
-    if (this.state.mouseDown) {
-      this.setState(() => ({ mouseDown: false }));
-      return;
-    }
-    this.onCloseDropDown();
   }
 
   render() {
@@ -60,7 +42,6 @@ class SelectInput extends React.Component {
           dropDown &&
           <Options
             options={options}
-            onOptionMouseDown={this.onOptionMouseDown}
           />
         }
       </div>
