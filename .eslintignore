@@ -1,2 +1,4 @@
 dist
+src/components/App/App.js
+src/components/Select/SelectButton/SelectButton.js
 src/components/Select/Select.js
