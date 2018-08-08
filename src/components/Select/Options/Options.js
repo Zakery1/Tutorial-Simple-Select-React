@@ -23,11 +23,12 @@ const Options = ({ options, onOptionMouseDown }) => (
 
 Options.propTypes = {
   options: arrayOf(object),
-  onOptionMouseDown: func.isRequired,
+  onOptionMouseDown: func,
 };
 
 Options.defaultProps = {
   options: [],
+  onOptionMouseDown: () => null,
 };
 
 export default Options;
