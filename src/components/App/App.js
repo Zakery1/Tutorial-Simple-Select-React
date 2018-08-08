@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import NpmSelect from 'simple-react-select';
-import Select from 'src/components/Select';
+// import Select from 'src/components/Select';
 
 import './app.scss';
 
